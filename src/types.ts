@@ -9,6 +9,7 @@ export type User = {
   country: string;
   phone_number: string;
   birthdate: string;
+  friends: number[];
 };
 
 export type Users = User[];

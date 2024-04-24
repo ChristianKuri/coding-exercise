@@ -12,5 +12,7 @@ export function GET(request: Request, { params }: { params: { id: string } }) {
     });
   }
 
-  return Response.json({ success: true, user });
+  const friends = user.friends.map((friendId) => findUser(friendId));
+
+  return Response.json({ success: true, user, friends });
 }
