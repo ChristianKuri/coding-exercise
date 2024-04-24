@@ -92,27 +92,29 @@ export default function Page({ params }: { params: { id: string } }) {
           </div>
         </div>
       </div>
-      <div className="px-4 sm:px-6 lg:px-8 py-4">
-        <div className="bg-white shadow overflow-hidden sm:rounded-lg">
-          <div className="px-4 py-5 sm:px-6">
-            <h3 className="text-lg leading-6 font-medium text-gray-900">Friends</h3>
-            <p className="mt-1 max-w-2xl text-sm text-gray-500">List of your friends.</p>
-          </div>
-          <div className="border-t border-gray-200">
-            <ul className="divide-y divide-gray-200">
-              {friends.map((friend) => (
-                <li key={friend.id} className="p-4 hover:bg-gray-50">
-                  <Link href={`/users/${friend.id}`}>
-                    <span className="text-blue-600 hover:text-blue-800 transition duration-300">
-                      {friend.first_name} {friend.last_name}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+      {friends.length > 0 && (
+        <div className="px-4 sm:px-6 lg:px-8 py-4">
+          <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+            <div className="px-4 py-5 sm:px-6">
+              <h3 className="text-lg leading-6 font-medium text-gray-900">Friends</h3>
+              <p className="mt-1 max-w-2xl text-sm text-gray-500">List of your friends.</p>
+            </div>
+            <div className="border-t border-gray-200">
+              <ul className="divide-y divide-gray-200">
+                {friends.map((friend) => (
+                  <li key={friend.id} className="p-4 hover:bg-gray-50">
+                    <Link href={`/users/${friend.id}`}>
+                      <span className="text-blue-600 hover:text-blue-800 transition duration-300">
+                        {friend.first_name} {friend.last_name}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
