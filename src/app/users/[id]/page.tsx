@@ -42,6 +42,11 @@ export default function Page({ params }: { params: { id: string } }) {
               Details of the user {user.first_name} {user.last_name}.
             </p>
           </div>
+          <div>
+            <Link href="/">
+              <span className="text-blue-600 hover:text-blue-800 transition duration-300">← Back to Users List</span>
+            </Link>
+          </div>
         </div>
         <div className="bg-white shadow overflow-hidden sm:rounded-lg">
           <div className="px-4 py-5 sm:px-6">
